@@ -1,0 +1,804 @@
+import streamlit as st
+from streamlit_option_menu import option_menu
+from streamlit.components.v1 import html
+from st_on_hover_tabs import on_hover_tabs
+import requests
+from streamlit_lottie import st_lottie
+from PIL import Image
+import streamlit_analytics
+import base64
+from streamlit_extras.mention import mention
+from streamlit_extras.app_logo import add_logo
+#import sqlite3
+#from bs4 import BeautifulSoup
+from streamlit_extras.echo_expander import echo_expander
+import pandas as pd
+#from pandas import json_normalize
+import openpyxl
+import numpy as np
+from matplotlib import pyplot as plt
+#import pymysql
+#AgGrid advanced streamlit table/dataframe formatter
+#from st_aggrid import AgGrid, GridOptionsBuilder
+
+
+# Set page title
+st.set_page_config(page_title="Blues", page_icon = "ice_hockey_stick_and_puck", layout = "wide", initial_sidebar_state = "auto")
+
+# Use the following line to include your style.css file
+st.markdown('<style>' + open('style.css').read() + '</style>', unsafe_allow_html=True)
+
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+def render_lottie(url, width, height):
+    lottie_html = f"""
+    <html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+    </head>
+    <body>
+        <div id="lottie-container" style="width: {width}; height: {height};"></div>
+        <script>
+            var animation = lottie.loadAnimation({{
+                container: document.getElementById('lottie-container'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '{url}'
+            }});
+            animation.setRendererSettings({{
+                preserveAspectRatio: 'xMidYMid slice',
+                clearCanvas: true,
+                progressiveLoad: false,
+                hideOnTransparent: true
+            }});
+        </script>
+    </body>
+    </html>
+    """
+    return lottie_html
+
+# Use local CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+local_css("style/style.css")
+
+footer = """
+footer{
+    visibility:visible;
+}
+footer:after{
+    content:'Copyright © 2023 St.Louis Blues';
+    position:relative;
+    color:black;
+}
+"""
+
+# Load assets
+#lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+# Assets for Home Page
+img_utown = Image.open("images/BluesHomePageLogo.png")
+img_lh = Image.open("images/RetroLogo.png")
+#Team Page Logos
+#Atlantic Division
+Bruins_logo=Image.open("images/boston_bruins.png")
+Sabres_logo=Image.open("images/buffalo_sabres_21.png")
+RedWings_logo=Image.open("images/detroit_red_wings.png")
+Panthers_logo=Image.open("images/florida_panthers.png")
+Canadiens_logo=Image.open("images/montreal_canadiens.png")
+Senators_logo=Image.open("images/ottawa_senators_21.png")
+Lightning_logo=Image.open("images/tampa_bay_lightning.png")
+MapleLeafs_logo=Image.open("images/toronto_maple_leafs.png")
+#Metro Division
+Canes_logo=Image.open("images/carolina_hurricanes.png")
+CBJ_logo=Image.open("images/columbus_blue_jackets.png")
+Devils_logo=Image.open("images/new_jersey_devils.png")
+Islanders_logo=Image.open("images/new_york_islanders.png")
+Rangers_logo=Image.open("images/new_york_rangers.png")
+Flyers_logo=Image.open("images/philadelphia_flyers.png")
+Penguins_logo=Image.open("images/pittsburgh_penguins.png")
+Caps_logo=Image.open("images/washington_capitals.png")
+#Central Division
+Hawks_logo= Image.open("images/chicago_blackhawks.png")
+Avs_logo=Image.open("images/colorado_avalanche.png")
+Stars_logo=Image.open("images/dallas_stars.png")
+Wild_logo=Image.open("images/minnesota_wild.png")
+Preds_logo=Image.open("images/nashville_predators.png")
+Blues_logo=Image.open("images/st_louis_blues.png")
+Utah_logo=Image.open("images/utah_hockey_club.png")
+Winnipeg_logo=Image.open("images/winnipeg_jets.png")
+#Pacific Division
+Ducks_logo=Image.open("images/anaheim_ducks.png")
+Flames_logo= Image.open("images/calgary_flames.png")
+Oilers_logo=Image.open("images/edmonton_oilers.png")
+Kings_logo=Image.open("images/los_angeles_kings.png")
+Sharks_logo=Image.open("images/san_jose_sharks.png")
+Kraken_logo=Image.open("images/seattle_kraken.png")
+Canucks_logo=Image.open("images/vancouver_canucks.png")
+VGK_logo=Image.open("images/vegas_golden_knights.png")
+#Dataframes for team pages
+#Pacific Division
+#Anaheim Ducks
+ducks_forwards=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Forwards.csv")
+ducks_defense=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Defense.csv")
+ducks_goalies=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Goalies.csv")
+ducks_ir = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks IR.csv")
+ducks_DCB = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Dead Cap Buyout.csv")
+ducks_NRF = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Forwards.csv")
+ducks_NRD = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Defense.csv")
+ducks_NRG = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Goalies.csv")
+
+#AgGrid advanced table
+#Create GridOptionsBuilder from dataframe and enable autoSizeColumns and resizable
+# def configure_grid_options(df):
+#     gb = GridOptionsBuilder.from_dataframe(df)
+#     gb.configure_default_column(resizable=True, autoSizeColumns=True)
+#     return gb.build()
+#img_lottie_animation = Image.open("images/lottie_animation.gif")
+# Assets for contact
+lottie_coding = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_abqysclq.json")
+
+img_github = Image.open("images/icons8-github-100.png")
+
+def social_icons(width=24, height=24, **kwargs):
+        icon_template = '''
+        <a href="{url}" target="_blank" style="margin-right: 20px;">
+            <img src="{icon_src}" alt="{alt_text}" width="{width}" height="{height}">
+        </a>
+        '''
+
+        icons_html = ""
+        for name, url in kwargs.items():
+            icon_src = {
+                "github": "https://img.icons8.com/?size=100&id=12599&format=png&color=#d9d1d1"
+            }.get(name.lower())
+
+            if icon_src:
+                icons_html += icon_template.format(url=url, icon_src=icon_src, alt_text=name.capitalize(), width=width, height=height)
+
+        return icons_html
+#####################
+# Custom function for printing text
+def txt(a, b):
+  col1, col2 = st.columns([4,1])
+  with col1:
+    st.markdown(a)
+  with col2:
+    st.markdown(b)
+
+def txt2(a, b):
+  col1, col2 = st.columns([1,4])
+  with col1:
+    st.markdown(f'`{a}`')
+  with col2:
+    st.markdown(b)
+
+def txt3(a, b):
+  col1, col2 = st.columns([1,4])
+  with col1:
+    st.markdown(f'<p style="font-size: 20px;">{a}</p>', unsafe_allow_html=True)
+  with col2:
+    b_no_commas = b.replace(',', '')
+    st.markdown(b_no_commas)
+
+def txt4(a, b):
+  col1, col2 = st.columns([1.5,2])
+  with col1:
+    st.markdown(f'<p style="font-size: 25px; color: white;">{a}</p>', unsafe_allow_html=True)
+  with col2: #can't seem to change color besides green
+    st.markdown(f'<p style="font-size: 25px; color: red;"><code>{b}</code></p>', unsafe_allow_html=True)
+
+#####################
+
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+add_bg_from_local('bg.png')   
+
+
+# Sidebar: If using streamlit_option_menu
+with st.sidebar:
+    with st.container():
+        l, m, r = st.columns((1,3,1))
+        with l:
+            st.empty()
+        with m:
+            st.image(img_lh, width=175)
+        with r:
+            st.empty()
+    
+    choose = option_menu(
+                        "Options", 
+                        ["Home Page", "Active Players", "Cost Per Point", "Cost Per Save", "Trades", "Retained Salary", "Teams"],
+                         icons=['globe fill', 'people', 'currency-dollar', 'piggy-bank-fill', 'repeat', 'percent', 'trophy fill'],
+                         menu_icon="music-note-list", 
+                         default_index=0,
+                         styles={
+        "container": {"padding": "0!important", "background-color": "#041E42"},
+        "icon": {"color": "#d9d1d1", "font-size": "20px"}, 
+        "nav-link": {"font-size": "17px", "text-align": "left", "margin":"0px", "--hover-color": "#f44336"},
+        "nav-link-selected": {"background-color": "#041E42"},
+    }
+    )
+    github_url = "https://github.com/Nick3429/NHLSalaryCap"
+    with st.container():
+        l, m, r = st.columns((0.11,2,0.1))
+        with l:
+            st.empty()
+        with m:
+            st.markdown(
+                social_icons(30, 30, GitHub=github_url),
+                unsafe_allow_html=True)
+        with r:
+            st.empty()
+
+st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_html=True)
+st.title("St. Louis Blues Analytics")
+# Create header
+if choose == "Home Page":
+    #aboutme.createPage()
+    with st.container():
+        left_column, middle_column, right_column = st.columns((1,0.2,0.5))
+        with left_column:
+            st.header("Home Page")
+            st.subheader("What is included in this Website")
+            st.write("This Website will serve as the internal analytics and Salary Cap system for the St. Louis Blues. In the navigation bar on the left, it will contain 7 pages: Homepage, Active Players, Cost per Point, Cost per Save, Trades, Retained Salary, and a Teams Page.")
+            st.write(" The Active Players Tab will allow you to find any contract information out on any player in the league. It will also allow you to filter by players who will be free agents after their contract expires or  RFA's after their contract expires so you can find potential players to target in the offseason. In addition, player stats will be included as well in this page. This page serves as the ultimate page to find out contract information or statistical information on any player.")
+            st.write(" The Cost per Point page will allow you to see which players are giving you the most bang for your buck in terms of their point production, goal production, assists production, and time on ice. Allows you to evaluate players from a points against salary perspective.")
+            st.write("The Cost per Save page will allow you to evaluate goalies in terms of which ones give you the most bang for their buck. Same idea as the Cost per point page but just for goalies.")
+            st.write("The trades page will allow you to find every trade that occured in the league during the past 3 seasons.")
+           # st.write("📄 [Resume (1 page)](https://drive.google.com/file/d/164EEVH6BmvC89q2M4WsBNF1JyddDAbNY/view?usp=sharing)")
+        with middle_column:
+            st.empty()
+        with right_column:
+            st.image(img_utown)
+elif choose == "Active Players":   
+    #overview.createPage()
+    st.header("Active Players")
+
+# Create section for Cost Per Point
+elif choose == "Cost Per Point":
+    figure=plt.figure()
+    st.markdown("<h1 style='text-align: center;'> Player Cost Per Point </h1>",unsafe_allow_html=True)
+    st.markdown("----",unsafe_allow_html=True)
+    file=st.file_uploader("Upload Season", type=["csv"], accept_multiple_files=False)
+    if file:
+            CF_CostPerPoint_data=pd.read_csv(file)
+            st.dataframe(CF_CostPerPoint_data)
+
+# Create section for Cost Per Save
+elif choose == "Cost Per Save":
+    figure=plt.figure()
+    st.markdown("<h1 style='text-align: center;'> Goalie Cost Per Save </h1>",unsafe_allow_html=True)
+    st.markdown("----",unsafe_allow_html=True)
+    file=st.file_uploader("Upload Season", type=["csv"], accept_multiple_files=False)
+    if file:
+            CF_CostPerPoint_data=pd.read_csv(file)
+            st.dataframe(CF_CostPerPoint_data)
+
+# Create section for Trades
+elif choose == "Trades":
+    st.header("Trades")
+
+# Create section for Retained Salary
+elif choose == "Retained Salary":
+    st.header("Retained Salary")
+    
+elif choose == "Teams":
+    st.header("Teams")
+    selected_options = ["Anaheim Ducks", "Boston Bruins", "Buffalo Sabres", "Calgary Flames", "Carolina Hurricanes","Chicago Blackhawks", "Colorado Avalanche", "Columbus Blue Jackets", "Dallas Stars", "Detroit Red Wings", "Edmonton Oilers", "Florida Panthers", "Los Angeles Kings", "Minnesota Wild", "Montreal Canadiens", "Nashville Predators", "New Jersey Devils","New York Islanders", "New York Rangers","Ottawa Senators","Philadelphia Flyers", "Pittsburgh Penguins", "San Jose Sharks","Seattle Kraken", "St. Louis Blues", "Tampa Bay Lightning", "Toronto Maple Leafs", "Utah Hockey Club","Vancouver Canucks", "Vegas Golden Knights","Washington Capitals","Winnipeg Jets"
+                        ]
+    selected = st.selectbox("Pick a team to view their cap situation", options = selected_options)
+    st.write("Current selection:", selected)
+    if selected == "Anaheim Ducks":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Ducks_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+            #st.image(Hawks_logo)
+                st.write("*General Manager: Pat Verbeek*")
+                st.write("*Head Coach: Greg Cronin*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.dataframe(ducks_forwards, hide_index=True)
+                st.dataframe(ducks_defense, hide_index=True)
+                st.dataframe(ducks_goalies, hide_index=True)
+                st.dataframe(ducks_ir, hide_index=True)
+                st.dataframe(ducks_DCB, hide_index=True)
+                st.dataframe(ducks_NRF, hide_index=True)
+                st.dataframe(ducks_NRD, hide_index=True)
+                st.dataframe(ducks_NRG, hide_index=True)
+    if selected == "Calgary Flames":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Flames_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Craig Conroy*")
+                st.write("*Head Coach: Ryan Huska*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Edmonton Oilers":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Oilers_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Ken Holland*")
+                st.write("*Head Coach: Kris Knoblauch*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Los Angeles Kings":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Kings_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Rob Blake*")
+                st.write("*Head Coach: Jim Hiller*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "San Jose Sharks":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Sharks_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Mike Grier*")
+                st.write("*Head Coach: Ryan Warsofsky*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Seattle Kraken":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Kraken_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Ron Francis*")
+                st.write("*Head Coach: Dan Bylsma*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Vancouver Canucks":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Canucks_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Patrik Allvin*")
+                st.write("*Head Coach: Rick Tocchet*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Vegas Golden Knights":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(VGK_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Kelly McCrimmon*")
+                st.write("*Head Coach: Bruce Cassidy*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Chicago Blackhawks":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Hawks_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Kyle Davidson*")
+                st.write("*Head Coach: Luke Richardson*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Colorado Avalanche":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Avs_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Chris MacFarland*")
+                st.write("*Head Coach: Jared Bednar*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Dallas Stars":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Stars_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Jim Nill*")
+                st.write("*Head Coach: Pete DeBoer*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Minnesota Wild":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Wild_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Bill Guerin*")
+                st.write("*Head Coach: John Hynes*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Nashville Predators":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Preds_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Barry Trotz*")
+                st.write("*Head Coach: Andrew Brunette*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "St. Louis Blues":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Blues_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Doug Armstrong*")
+                st.write("*Head Coach: Drew Bannister*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Utah Hockey Club":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Utah_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Bill Armstrong*")
+                st.write("*Head Coach: Andre Tourigny*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Winnipeg Jets":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Winnipeg_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Kevin Cheveldayoff*")
+                st.write("*Head Coach: Scott Arniel*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Carolina Hurricanes":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Canes_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Eric Tulsky*")
+                st.write("*Head Coach: Rod Brind'Amour*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Columbus Blue Jackets":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(CBJ_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Don Waddell*")
+                st.write("*Head Coach: *")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "New Jersey Devils":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Devils_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Tom Fitzgerald*")
+                st.write("*Head Coach: Sheldon Keefe*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "New York Islanders":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Islanders_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Lou Lamoriello*")
+                st.write("*Head Coach: Patrik Roy*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "New York Rangers":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Rangers_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Chris Drury*")
+                st.write("*Head Coach: Peter Laviolette*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Philadelphia Flyers":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Flyers_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Daniel Briere*")
+                st.write("*Head Coach: John Tortorella*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Pittsburgh Penguins":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Penguins_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Kyle Dubas*")
+                st.write("*Head Coach: Mike Sullivan*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Washington Capitals":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Caps_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Brian MacLellan*")
+                st.write("*Head Coach: Spencer Carbery*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Boston Bruins":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Bruins_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Don Sweeney*")
+                st.write("*Head Coach: Jim Montgomery*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Buffalo Sabres":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Sabres_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Kevyn Adams*")
+                st.write("*Head Coach: Lindy Ruff*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Detroit Red Wings":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(RedWings_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Steve Yzerman*")
+                st.write("*Head Coach: Derek Lalonde*") 
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider() 
+    if selected == "Florida Panthers":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Panthers_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Bill Zito*")
+                st.write("*Head Coach: Paul Maurice*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Montreal Canadiens":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Canadiens_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Kent Hughes*")
+                st.write("*Head Coach: Martin St. Louis*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Ottawa Senators":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Senators_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Steve Staios*")
+                st.write("*Head Coach: Travis Green*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Tampa Bay Lightning":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(Lightning_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Julien BriseBois*")
+                st.write("*Head Coach: Jon Cooper*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+    if selected == "Toronto Maple Leafs":
+        with st.container():
+            blank_col1, main_col= st.columns((0.45,0.55))
+            with main_col:
+                st.image(MapleLeafs_logo)
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
+            with main_col:
+                #st.image(Hawks_logo)
+                st.write("*General Manager: Brad Treliving*")
+                st.write("*Head Coach: Craig Berube*")
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                st.divider()
+        
+
+st.markdown("*Copyright © 2023 St. Louis Blues*")
+
