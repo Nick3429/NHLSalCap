@@ -1,14 +1,13 @@
-"Forwards (6 - $30,950,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-"Fiala, Kevin",5 UFA,NMC,"RW, LW",NHL,Trade,27.0,8.9,"$7,875,000","$7,875,000","$7,875,000","$7,875,000","$7,875,000",UFA
-"Kopitar, Anze ""C""",2 UFA,35+NMC,C,NHL,Draft,36.0,8.0,"$7,000,000","$7,000,000",UFA,,,
-"Danault, Phillip",3 UFA,M-NTC,C,NHL,Signed,31.0,6.3,"$5,500,000","$5,500,000","$5,500,000",UFA,,
-"Kempe, Adrian",2 UFA,M-NTC,"LW, RW",NHL,Draft,27.0,6.3,"$5,500,000","$5,500,000",UFA,,,
-"Moore, Trevor",4 UFA,,"LW, RW",NHL,Trade,29.0,4.8,"$4,200,000","$4,200,000","$4,200,000","$4,200,000",UFA,
-"Laferriere, Alex",1 RFA,ELC,RW,NHL,Draft,22.0,1.0,"$875,000",RFA,,,,
-"Byfield, Quinton",0 RFA,,"LW, C",NHL,Draft,21.0,,RFA,,,,,
-"Grundström, Carl",0 RFA,,"LW, RW",NHL,Trade,26.0,,RFA,,,,,
-"Kaliyev, Arthur",0 RFA,,"RW, LW",NHL,Draft,22.0,,RFA,,,,,
-"Lizotte, Blake",0 RFA,,C,NHL,Signed,26.0,,RFA,,,,,
-"Arvidsson, Viktor",0 UFA,,"RW, LW",NHL,Trade,31.0,,UFA,,,,,
-"Lewis, Trevor",0 UFA,,"RW, C",NHL,Signed,37.0,,UFA,,,,,
-TOTAL,,,,,,27.9,35.2,"$30,950,000","$30,075,000","$17,575,000","$12,075,000","$7,875,000",
+"Forwards (9 - $37,915,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Fiala, Kevin",5 UFA,NMC,"RW, LW",NHL,Trade,27,8.9,"$7,875,000 ","$7,875,000 ","$7,875,000 ","$7,875,000 ","$7,875,000 ",UFA
+"Kopitar, Anze ""C""",2 UFA,35+NMC,C,NHL,Draft,36,8,"$7,000,000 ","$7,000,000 ",UFA,,,
+"Danault, Phillip",3 UFA,M-NTC,C,NHL,Signed,31,6.3,"$5,500,000 ","$5,500,000 ","$5,500,000 ",UFA,,
+"Kempe, Adrian",2 UFA,M-NTC,"LW, RW",NHL,Draft,27,6.3,"$5,500,000 ","$5,500,000 ",UFA,,,
+"Moore, Trevor",4 UFA,,"LW, RW",NHL,Trade,29,4.8,"$4,200,000 ","$4,200,000 ","$4,200,000 ","$4,200,000 ",UFA,
+"Foegele, Warren",3 UFA,,"LW, RW",NHL,Signed,28,4,"$3,500,000 ","$3,500,000 ","$3,500,000 ",UFA,,
+"Jeannot, Tanner",1 UFA,M-NTC,"RW, LW",NHL,Trade,27,3,"$2,665,000 ",UFA,,,,
+"Laferriere, Alex",1 RFA,ELC,RW,NHL,Draft,22,1,"$875,000 ",RFA,,,,
+"Lewis, Trevor",1 UFA,35+,"RW, C",NHL,Signed,37,0.9,"$800,000 ",UFA,,,,
+"Byfield, Quinton",0 RFA,,"LW, C",NHL,Draft,21,,RFA,,,,,
+"Kaliyev, Arthur",0 RFA,,"RW, LW",NHL,Draft,23,,RFA,,,,,
+TOTAL,,,,,,28,43.1,"$37,915,000 ","$33,575,000 ","$21,075,000 ","$12,075,000 ","$7,875,000 ",

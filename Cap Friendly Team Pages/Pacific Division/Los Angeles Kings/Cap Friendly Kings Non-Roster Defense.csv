@@ -1,9 +1,8 @@
-,Defense (5),Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-0,"Dvorak, Jakub",3 RFA,ELC,LD,Loan,Draft,19.0,-,"$870,000","$870,000","$870,000",RFA,,
-1,"Clarke, Brandt",2 RFA,ELC,RD,Minor,Draft,21.0,-,"$863,333","$863,333",RFA,,,
-2,"Krygier, Cole",1 RFA,ELC,LD,Minor,Trade,24.0,-,"$837,500",RFA,,,,
-3,"Booth, Angus",3 RFA,ELC,LD,Minor,Draft,20.0,-,"$826,667","$826,667","$826,667",RFA,,
-4,"Hicketts, Joe",1 UFA,,LD,Minor,Signed,28.0,-,"$775,000",UFA,,,,
-5,"Connauton, Kevin",0 UFA,,LD/RD,Minor,Trade,34.0,-,UFA,,,,,
-6,"Santini, Steven",0 UFA,,RD,Minor,Signed,29.0,-,UFA,,,,,
-7,TOTAL,,,,,,25.0,-,"$4,172,500","$2,560,000","$1,696,667",,,
+Defense (6),Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Dvorak, Jakub",3 RFA,ELC,LD,Loan,Draft,19,-,"$870,000 ","$870,000 ","$870,000 ",RFA,,
+"Clarke, Brandt",2 RFA,ELC,RD,Minor,Draft,21,-,"$863,333 ","$863,333 ",RFA,,,
+"Krygier, Cole",1 RFA,ELC,LD,Minor,Trade,24,-,"$837,500 ",RFA,,,,
+"Booth, Angus",3 RFA,ELC,LD,Minor,Draft,20,-,"$826,667 ","$826,667 ","$826,667 ",RFA,,
+"Hicketts, Joe",1 UFA,,LD,Minor,Signed,28,-,"$775,000 ",UFA,,,,
+"Walsh, Reilly",1 RFA,,RD,Minor,Signed,25,-,"$775,000 ",RFA,,,,
+TOTAL,,,,,,22.8,-,"$4,947,500 ","$2,560,000 ","$1,696,667 ",,,
