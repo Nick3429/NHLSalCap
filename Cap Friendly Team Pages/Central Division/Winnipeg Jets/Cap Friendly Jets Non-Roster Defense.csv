@@ -1,10 +1,7 @@
-,Defense (3),Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-0,"Bauer, Tyrel",1 RFA,ELC,RD,Minor,Draft,22.0,-,"$850,000",RFA,,,,
-1,"Salomonsson, Elias",3 RFA,ELC,RD,Loan,Draft,19.0,-,"$815,000","$815,000","$815,000",RFA,,
-2,"Kuzmin, Dmitri",2 RFA,ELC,LD,Minor,Draft,21.0,-,"$795,556","$795,556",RFA,,,
-3,"Heinola, Ville",0 RFA,,LD,Minor,Draft,23.0,-,RFA,,,,,
-4,"Kniazev, Artemi",0 RFA,,LD,Loan,Trade,23.0,-,RFA,,,,,
-5,"Lundmark, Simon",0 RFA,,RD,Minor,Draft,23.0,-,RFA,,,,,
-6,"Capobianco, Kyle",0 UFA,,LD,Minor,Signed,26.0,-,UFA G6,,,,,
-7,"Sautner, Ashton",0 UFA,,LD,Minor,Signed,30.0,-,UFA,,,,,
-8,TOTAL,,,,,,23.4,-,"$2,460,556","$1,610,556","$815,000",,,
+Defense (3),Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Bauer, Tyrel",1 RFA,ELC,RD,Minor,Draft,22,-,"$850,000 ",RFA,,,,
+"Salomonsson, Elias",3 RFA,ELC,RD,Loan,Draft,19,-,"$815,000 ","$815,000 ","$815,000 ",RFA,,
+"Kuzmin, Dmitri",2 RFA,ELC,LD,Minor,Draft,21,-,"$795,556 ","$795,556 ",RFA,,,
+"Heinola, Ville",0 RFA,,LD,Minor,Draft,23,-,RFA,,,,,
+"Lundmark, Simon",0 RFA,,RD,Minor,Draft,23,-,RFA,,,,,
+TOTAL,,,,,,21.6,-,"$2,460,556 ","$1,610,556 ","$815,000 ",,,
