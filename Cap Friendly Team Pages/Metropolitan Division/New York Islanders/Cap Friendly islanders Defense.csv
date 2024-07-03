@@ -1,11 +1,9 @@
-,"Defense (5 - $19,200,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-0,"Pulock, Ryan",6 UFA,NTC,RD,NHL,Draft,29.0,7.0,"$6,150,000","$6,150,000","$6,150,000","$6,150,000","$6,150,000","$6,150,000"
-1,"Pelech, Adam",5 UFA,NTC,LD,NHL,Draft,29.0,6.5,"$5,750,000","$5,750,000","$5,750,000","$5,750,000","$5,750,000",UFA
-2,"Dobson, Noah",1 RFA,,RD,NHL,Draft,24.0,4.5,"$4,000,000",RFA,,,,
-3,"Romanov, Alexander",1 RFA,,LD,NHL,Trade,24.0,2.8,"$2,500,000",RFA,,,,
-4,"Bolduc, Samuel",1 RFA,,LD,NHL,Draft,23.0,0.9,"$800,000",RFA,,,,
-5,"Cholowski, Dennis",0 RFA,,LD,NHL,Signed,26.0,,RFA,,,,,
-6,"Aho, Sebastian",0 UFA,,LD,NHL,Draft,28.0,,UFA,,,,,
-7,"Bortuzzo, Robert",0 UFA,,RD,NHL,Trade,35.0,,UFA,,,,,
-8,"Reilly, Mike",0 UFA,,LD,NHL,Waivers claim,30.0,,UFA,,,,,
-9,TOTAL,,,,,,27.6,21.8,"$19,200,000","$11,900,000","$11,900,000","$11,900,000","$11,900,000","$6,150,000"
+"Defense (6 - $20,450,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Pulock, Ryan",6 UFA,NTC,RD,NHL,Draft,29,7,"$6,150,000 ","$6,150,000 ","$6,150,000 ","$6,150,000 ","$6,150,000 ","$6,150,000 "
+"Pelech, Adam",5 UFA,NTC,LD,NHL,Draft,29,6.5,"$5,750,000 ","$5,750,000 ","$5,750,000 ","$5,750,000 ","$5,750,000 ",UFA
+"Dobson, Noah",1 RFA,,RD,NHL,Draft,24,4.5,"$4,000,000 ",RFA,,,,
+"Romanov, Alexander",1 RFA,,LD,NHL,Trade,24,2.8,"$2,500,000 ",RFA,,,,
+"Reilly, Mike",1 UFA,,LD,NHL,Signed,30,1.4,"$1,250,000 ",UFA,,,,
+"Bolduc, Samuel",1 RFA,,LD,NHL,Draft,23,0.9,"$800,000 ",RFA,,,,
+"Cholowski, Dennis",0 RFA,,LD,NHL,Signed,26,,RFA,,,,,
+TOTAL,,,,,,26.4,23.2,"$20,450,000 ","$11,900,000 ","$11,900,000 ","$11,900,000 ","$11,900,000 ","$6,150,000 "

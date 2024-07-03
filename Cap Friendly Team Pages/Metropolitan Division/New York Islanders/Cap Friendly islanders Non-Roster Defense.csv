@@ -1,9 +1,8 @@
-,Defense (6),Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-0,"Mitchell, Travis",1 RFA,ELC,LD,Minor,Signed,24.0,-,"$882,500",RFA,,,,
-1,"Fulp, Aidan",1 RFA,ELC,RD,Minor,Signed,24.0,-,"$870,000",RFA,,,,
-2,"George, Isaiah",3 RFA,ELC,LD,Junior,Draft,20.0,-,"$838,333","$838,333","$838,333",RFA,,
-3,"Warren, Marshall",2 RFA,ELC,LD,Minor,Signed,23.0,-,"$825,000","$825,000",RFA,,,
-4,"Odelius, Calle",3 RFA,ELC,LD,Loan,Draft,20.0,-,"$815,000","$815,000","$815,000",RFA,,
-5,"Hutton, Grant",1 UFA,,RD,Minor,Signed,28.0,-,"$775,000",UFA,,,,
-6,"LaDue, Paul",0 UFA,,RD,Minor,Signed,31.0,-,UFA,,,,,
-7,TOTAL,,,,,,24.3,-,"$5,005,833","$2,478,333","$1,653,333",,,
+Defense (6),Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Mitchell, Travis",1 RFA,ELC,LD,Minor,Signed,24,-,"$882,500 ",RFA,,,,
+"Fulp, Aidan",1 RFA,ELC,RD,Minor,Signed,24,-,"$870,000 ",RFA,,,,
+"George, Isaiah",3 RFA,ELC,LD,Junior,Draft,20,-,"$838,333 ","$838,333 ","$838,333 ",RFA,,
+"Warren, Marshall",2 RFA,ELC,LD,Minor,Signed,23,-,"$825,000 ","$825,000 ",RFA,,,
+"Odelius, Calle",3 RFA,ELC,LD,Loan,Draft,20,-,"$815,000 ","$815,000 ","$815,000 ",RFA,,
+"Hutton, Grant",1 UFA,,RD,Minor,Signed,28,-,"$775,000 ",UFA,,,,
+TOTAL,,,,,,23.2,-,"$5,005,833 ","$2,478,333 ","$1,653,333 ",,,

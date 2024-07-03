@@ -1,7 +1,6 @@
-,Goalies (4),Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-0,"Lennox, Tristan",2 RFA,ELC,G,Minor,Draft,21.0,-,"$867,500","$867,500",RFA,,,
-1,"Tikkanen, Henrik",2 RFA,ELC,G,Minor,Draft,23.0,-,"$823,750","$823,750",RFA,,,
-2,"Högberg, Marcus",2 UFA,,G,Minor,Signed,29.0,-,"$775,000","$775,000",UFA,,,
-3,"Skarek, Jakub",1 RFA,,G,Minor,Draft,24.0,-,"$775,000",RFA,,,,
-4,"Appleby, Ken",0 UFA,,G,Minor,Signed,29.0,-,UFA,,,,,
-5,TOTAL,,,,,,25.2,-,"$3,241,250","$2,466,250",,,,
+Goalies (4),Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Lennox, Tristan",2 RFA,ELC,G,Minor,Draft,21,-,"$867,500 ","$867,500 ",RFA,,,
+"Tikkanen, Henrik",2 RFA,ELC,G,Minor,Draft,23,-,"$823,750 ","$823,750 ",RFA,,,
+"Hogberg, Marcus",2 UFA,,G,Minor,Signed,29,-,"$775,000 ","$775,000 ",UFA,,,
+"Skarek, Jakub",1 RFA,,G,Minor,Draft,24,-,"$775,000 ",RFA,,,,
+TOTAL,,,,,,24.3,-,"$3,241,250 ","$2,466,250 ",,,,

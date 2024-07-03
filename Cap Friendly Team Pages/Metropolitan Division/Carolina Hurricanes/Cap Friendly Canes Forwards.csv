@@ -1,20 +1,16 @@
-"Forwards (10 - $34,894,166)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-"Aho, Sebastian",8 UFA,NMC,C,NHL,Signed,26.0,11.1,"$9,750,000","$9,750,000","$9,750,000","$9,750,000","$9,750,000","$9,750,000"
-"Svechnikov, Andrei",5 UFA,,"LW, RW",NHL,Draft,24.0,8.8,"$7,750,000","$7,750,000","$7,750,000","$7,750,000","$7,750,000",UFA
-"Kotkaniemi, Jesperi",6 UFA,,C,NHL,Signed,23.0,5.5,"$4,820,000","$4,820,000","$4,820,000","$4,820,000","$4,820,000","$4,820,000"
-"Kuznetsov, Evgeny",1 UFA,RSM-NTC,C,NHL,Trade,32.0,4.4,"$3,900,000",UFA,,,,
-"Staal, Jordan ""C""",3 UFA,NMC,"C, LW",NHL,Trade,35.0,3.3,"$2,900,000","$2,900,000","$2,900,000",UFA,,
-"Fast, Jesper",1 UFA,M-NTC,RW,NHL,Signed,32.0,2.7,"$2,400,000",UFA,,,,
-"Nadeau, Bradly",3 RFA,ELC,LW,NHL,Draft,19.0,1.0,"$918,333","$918,333","$918,333",RFA,,
-"Blake, Jackson",2 RFA,ELC,RW,NHL,Draft,20.0,1.0,"$905,833","$905,833",RFA,,,
-"Suzuki, Ryan",1 RFA,,C,NHL,Draft,23.0,0.9,"$775,000",RFA,,,,
-"Lemieux, Brendan",1 UFA,,"LW, RW",NHL,Signed,28.0,0.9,"$775,000",UFA,,,,
-"Comtois, Maxime",0 RFA,,LW,NHL,Signed,25.0,,RFA,,,,,
-"Drury, Jack",0 RFA,,C,NHL,Draft,24.0,,RFA,,,,,
-"Jarvis, Seth",0 RFA,,RW,NHL,Draft,22.0,,RFA,,,,,
-"Necas, Martin",0 RFA,,RW,NHL,Draft,25.0,,RFA,,,,,
-"Guentzel, Jake",0 UFA,,"LW, RW",NHL,Trade,29.0,,UFA,,,,,
-"Martinook, Jordan ""A""",0 UFA,,"LW, RW",NHL,Signed,31.0,,UFA,,,,,
-"Noesen, Stefan",0 UFA,,"LW, RW",NHL,Signed,31.0,,UFA,,,,,
-"Teräväinen, Teuvo",0 UFA,,"LW, RW",NHL,Trade,29.0,,UFA,,,,,
-TOTAL,,,,,,26.6,39.7,"$34,894,166","$27,044,166","$26,138,333","$22,320,000","$22,320,000","$14,570,000"
+"Forwards (11 - $39,070,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Aho, Sebastian",8 UFA,NMC,C,NHL,Signed,26,11.1,"$9,750,000 ","$9,750,000 ","$9,750,000 ","$9,750,000 ","$9,750,000 ","$9,750,000 "
+"Svechnikov, Andrei",5 UFA,,"LW, RW",NHL,Draft,24,8.8,"$7,750,000 ","$7,750,000 ","$7,750,000 ","$7,750,000 ","$7,750,000 ",UFA
+"Kotkaniemi, Jesperi",6 UFA,,C,NHL,Signed,23,5.5,"$4,820,000 ","$4,820,000 ","$4,820,000 ","$4,820,000 ","$4,820,000 ","$4,820,000 "
+"Kuznetsov, Evgeny",1 UFA,RSM-NTC,C,NHL,Trade,32,4.4,"$3,900,000 ",UFA,,,,
+"Martinook, Jordan",3 UFA,M-NTC,"LW, RW",NHL,Signed,31,3.5,"$3,050,000 ","$3,050,000 ","$3,050,000 ",UFA,,
+"Staal, Jordan ""C""",3 UFA,NMC,"C, LW",NHL,Trade,35,3.3,"$2,900,000 ","$2,900,000 ","$2,900,000 ",UFA,,
+"Fast, Jesper",1 UFA,M-NTC,RW,NHL,Signed,32,2.7,"$2,400,000 ",UFA,,,,
+"Carrier, William",6 UFA,,LW,NHL,Signed,29,2.3,"$2,000,000 ","$2,000,000 ","$2,000,000 ","$2,000,000 ","$2,000,000 ","$2,000,000 "
+"Robinson, Eric",1 UFA,,LW,NHL,Signed,29,1.1,"$950,000 ",UFA,,,,
+"Jost, Tyson",1 UFA,,C,NHL,Signed,26,0.9,"$775,000 ",UFA,,,,
+"Lemieux, Brendan",1 UFA,,"LW, RW",NHL,Signed,28,0.9,"$775,000 ",UFA,,,,
+"Drury, Jack",0 RFA,,C,NHL,Draft,24,,RFA,,,,,
+"Jarvis, Seth",0 RFA,,RW,NHL,Draft,22,,RFA,,,,,
+"Necas, Martin",0 RFA,,RW,NHL,Draft,25,,RFA,,,,,
+TOTAL,,,,,,27.6,44.4,"$39,070,000 ","$30,270,000 ","$30,270,000 ","$24,320,000 ","$24,320,000 ","$16,570,000 "

@@ -1,15 +1,14 @@
-"Forwards (9 - $42,600,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-"Ovechkin, Alex ""C""",2 UFA,"35+M-NTC, NMC",LW,NHL,Draft,38.0,10.8,"$9,500,000","$9,500,000",UFA,,,
-"Dubois, Pierre-Luc",7 UFA,NMC,C,NHL,Trade,26.0,9.7,"$8,500,000","$8,500,000","$8,500,000","$8,500,000","$8,500,000","$8,500,000"
-"Wilson, Tom ""A""",7 UFA,M-NTC,RW,NHL,Draft,30.0,7.4,"$6,500,000","$6,500,000","$6,500,000","$6,500,000","$6,500,000","$6,500,000"
-"Oshie, T.J. ""A""",1 UFA,M-NTC,RW,NHL,Trade,37.0,6.5,"$5,750,000",UFA,,,,
-"Strome, Dylan",4 UFA,,C,NHL,Signed,27.0,5.7,"$5,000,000","$5,000,000","$5,000,000","$5,000,000",UFA,
-"Protas, Aliaksei",5 UFA,,"RW, LW, C",NHL,Draft,23.0,3.8,"$3,375,000","$3,375,000","$3,375,000","$3,375,000","$3,375,000",UFA
-"Milano, Sonny",2 UFA,,"LW, RW",NHL,Signed,28.0,2.2,"$1,900,000","$1,900,000",UFA,,,
-"Dowd, Nic",1 UFA,,C,NHL,Signed,34.0,1.5,"$1,300,000",UFA,,,,
-"Sgarbossa, Michael",1 UFA,,C,NHL,Signed,31.0,0.9,"$775,000",UFA,,,,
-"Malenstyn, Beck",0 RFA,,"C, LW",NHL,Draft,26.0,,RFA,,,,,
-"McMichael, Connor",0 RFA,,"LW, C",NHL,Draft,23.0,,RFA,,,,,
-"Aubé-Kubel, Nicolas",0 UFA,,RW,NHL,Waivers claim,28.0,,UFA,,,,,
-"Pacioretty, Max",0 UFA,,LW,NHL,Signed,35.0,,UFA,,,,,
-TOTAL,,,,,,29.7,48.4,"$42,600,000","$34,775,000","$23,375,000","$23,375,000","$18,375,000","$15,000,000"
+"Forwards (12 - $52,575,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Ovechkin, Alex ""C""",2 UFA,"35+M-NTC, NMC",LW,NHL,Draft,38,10.8,"$9,500,000 ","$9,500,000 ",UFA,,,
+"Dubois, Pierre-Luc",7 UFA,NMC,C,NHL,Trade,26,9.7,"$8,500,000 ","$8,500,000 ","$8,500,000 ","$8,500,000 ","$8,500,000 ","$8,500,000 "
+"Wilson, Tom ""A""",7 UFA,M-NTC,RW,NHL,Draft,30,7.4,"$6,500,000 ","$6,500,000 ","$6,500,000 ","$6,500,000 ","$6,500,000 ","$6,500,000 "
+"Mangiapane, Andrew",1 UFA,M-NTC,"RW, LW",NHL,Trade,28,6.6,"$5,800,000 ",UFA,,,,
+"Oshie, T.J. ""A""",1 UFA,M-NTC,RW,NHL,Trade,37,6.5,"$5,750,000 ",UFA,,,,
+"Strome, Dylan",4 UFA,,C,NHL,Signed,27,5.7,"$5,000,000 ","$5,000,000 ","$5,000,000 ","$5,000,000 ",UFA,
+"Protas, Aliaksei",5 UFA,,"RW, LW, C",NHL,Draft,23,3.8,"$3,375,000 ","$3,375,000 ","$3,375,000 ","$3,375,000 ","$3,375,000 ",UFA
+"McMichael, Connor",2 RFA,,"LW, C",NHL,Draft,23,2.4,"$2,100,000 ","$2,100,000 ",RFA,,,
+"Milano, Sonny",2 UFA,,"LW, RW",NHL,Signed,28,2.2,"$1,900,000 ","$1,900,000 ",UFA,,,
+"Duhaime, Brandon",2 UFA,,"RW, LW",NHL,Signed,27,2.1,"$1,850,000 ","$1,850,000 ",UFA,,,
+"Dowd, Nic",1 UFA,,C,NHL,Signed,34,1.5,"$1,300,000 ",UFA,,,,
+"Raddysh, Taylor",1 UFA,,RW,NHL,Signed,26,1.1,"$1,000,000 ",UFA,,,,
+TOTAL,,,,,,28.9,59.7,"$52,575,000 ","$38,725,000 ","$23,375,000 ","$23,375,000 ","$18,375,000 ","$15,000,000 "

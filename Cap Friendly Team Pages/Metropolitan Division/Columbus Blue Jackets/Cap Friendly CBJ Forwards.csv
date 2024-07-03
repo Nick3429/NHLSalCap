@@ -1,16 +1,14 @@
-"Forwards (9 - $23,125,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
-"Gaudreau, Johnny",5 UFA,NMC,LW,NHL,Signed,30.0,11.1,"$9,750,000","$9,750,000","$9,750,000","$9,750,000","$9,750,000",UFA
-"Jenner, Boone ""C""",2 UFA,M-NTC,"C, LW",NHL,Draft,31.0,4.3,"$3,750,000","$3,750,000",UFA,,,
-"Kuraly, Sean",1 UFA,M-NTC,"C, LW",NHL,Signed,31.0,2.8,"$2,500,000",UFA,,,,
-"Chinakhov, Yegor",2 RFA,,"RW, LW",NHL,Draft,23.0,2.4,"$2,100,000","$2,100,000",RFA,,,
-"Olivier, Mathieu",1 UFA,,RW,NHL,Trade,27.0,1.3,"$1,100,000",UFA,,,,
-"Danforth, Justin",1 UFA,,"RW, C",NHL,Signed,31.0,1.3,"$1,100,000",UFA,,,,
-"Brindley, Gavin",2 10.2(c),ELC,C,NHL,Draft,19.0,1.1,"$950,000","$950,000",10.2(c),,,
-"Fantilli, Adam",2 RFA,ELC,C,NHL,Draft,19.0,1.1,"$950,000","$950,000",RFA,,,
-"Voronkov, Dmitri",1 RFA,ELC,"LW, C, RW",NHL,Draft,23.0,1.1,"$925,000",RFA,,,,
-"Marchenko, Kirill",0 RFA,,RW,NHL,Draft,23.0,,RFA,,,,,
-"Nylander, Alexander",0 RFA,,"RW, LW",NHL,Trade,26.0,,RFA,,,,,
-"Sillinger, Cole",0 RFA,,C,NHL,Draft,21.0,,RFA,,,,,
-"Texier, Alexandre",0 RFA,,"LW, C, RW",NHL,Draft,24.0,,RFA,,,,,
-"Meyer, Carson",0 UFA,,RW,Emerg. Loan,Draft,26.0,,UFA G6,,,,,
-TOTAL,,,,,,25.3,26.3,"$23,125,000","$17,500,000","$9,750,000","$9,750,000","$9,750,000",
+"Forwards (10 - $28,625,000)",Years Remaining,Terms,POS,Status,Acquired,Age,Cap%,2024-25,2025-26,2026-27,2027-28,2028-29,2029-30
+"Gaudreau, Johnny",5 UFA,NMC,LW,NHL,Signed,30,11.1,"$9,750,000 ","$9,750,000 ","$9,750,000 ","$9,750,000 ","$9,750,000 ",UFA
+"Monahan, Sean",5 UFA,NMC,"C, LW, RW",NHL,Signed,29,6.3,"$5,500,000 ","$5,500,000 ","$5,500,000 ","$5,500,000 ","$5,500,000 ",UFA
+"Jenner, Boone ""C""",2 UFA,M-NTC,"C, LW",NHL,Draft,31,4.3,"$3,750,000 ","$3,750,000 ",UFA,,,
+"Kuraly, Sean",1 UFA,M-NTC,"C, LW",NHL,Signed,31,2.8,"$2,500,000 ",UFA,,,,
+"Chinakhov, Yegor",2 RFA,,"RW, LW",NHL,Draft,23,2.4,"$2,100,000 ","$2,100,000 ",RFA,,,
+"Olivier, Mathieu",1 UFA,,RW,NHL,Trade,27,1.3,"$1,100,000 ",UFA,,,,
+"Danforth, Justin",1 UFA,,"RW, C",NHL,Signed,31,1.3,"$1,100,000 ",UFA,,,,
+"Brindley, Gavin",2 10.2(c),ELC,C,NHL,Draft,19,1.1,"$950,000 ","$950,000 ",10.2(c),,,
+"Fantilli, Adam",2 RFA,ELC,C,NHL,Draft,19,1.1,"$950,000 ","$950,000 ",RFA,,,
+"Voronkov, Dmitri",1 RFA,ELC,"LW, C, RW",NHL,Draft,23,1.1,"$925,000 ",RFA,,,,
+"Marchenko, Kirill",0 RFA,,RW,NHL,Draft,23,,RFA,,,,,
+"Sillinger, Cole",0 RFA,,C,NHL,Draft,21,,RFA,,,,,
+TOTAL,,,,,,25.6,32.5,"$28,625,000 ","$23,000,000 ","$15,250,000 ","$15,250,000 ","$15,250,000 ",
