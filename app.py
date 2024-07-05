@@ -289,21 +289,65 @@ elif choose == "Active Players":
 elif choose == "Cost Per Point":
     figure=plt.figure()
     st.markdown("<h1 style='text-align: center;'> Player Cost Per Point </h1>",unsafe_allow_html=True)
-    st.markdown("----",unsafe_allow_html=True)
-    file=st.file_uploader("Upload Season", type=["csv"], accept_multiple_files=False)
-    if file:
-            CF_CostPerPoint_data=pd.read_csv(file)
-            st.dataframe(CF_CostPerPoint_data)
+    season_options = ["Regular Season 2023-24", "Regular Season 2022-23", "Regular Season 2021-22", "Regular Season 2020-21","Regular Season 2019-20", "Regular Season 2018-19", "Regular Season 2017-18", "Regular Season 2016-17"]
+    with st.container():
+        season=st.selectbox("Pick a season", options = season_options)
+
+        #Map season option to corresponding table name
+        season_to_table_map={
+            "Regular Season 2023-24": "cf cost per point 2023-24",
+            "Regular Season 2022-23": "cf cost per point 2022-23",
+            "Regular Season 2021-22": "cf cost per point 2021-22",
+            "Regular Season 2020-21": "cf cost per point 2020-21",
+            "Regular Season 2019-20": "cf cost per point 2019-20",
+            "Regular Season 2018-19": "cf cost per point 2018-19",
+            "Regular Season 2017-18": "cf cost per point 2017-18",
+            "Regular Season 2016-17": "cf cost per point 2016-17"
+        }
+        # Get the table name based on the selected season
+        table_name = season_to_table_map.get(season)
+        if table_name:
+            try:
+                query = f"SELECT * FROM `{table_name}`"  # Query to get data from the corresponding table
+                df = pd.read_sql(query, conn)
+                df = df.reset_index(drop=True)  # Reset the index and drop the old index
+                st.dataframe(df)  # Display the DataFrame in Streamlit without the index
+            except pymysql.MySQLError as e:
+                st.error(f"Error executing query: {e}")
+            finally:
+                   conn.close()
 
 # Create section for Cost Per Save
 elif choose == "Cost Per Save":
-    figure=plt.figure()
     st.markdown("<h1 style='text-align: center;'> Goalie Cost Per Save </h1>",unsafe_allow_html=True)
     st.markdown("----",unsafe_allow_html=True)
-    file=st.file_uploader("Upload Season", type=["csv"], accept_multiple_files=False)
-    if file:
-            CF_CostPerPoint_data=pd.read_csv(file)
-            st.dataframe(CF_CostPerPoint_data)
+    season_options = ["Regular Season 2023-24", "Regular Season 2022-23", "Regular Season 2021-22", "Regular Season 2020-21","Regular Season 2019-20", "Regular Season 2018-19", "Regular Season 2017-18", "Regular Season 2016-17"]
+    with st.container():
+        season=st.selectbox("Pick a season", options = season_options)
+
+        #Map season option to corresponding table name
+        season_to_table_map={
+            "Regular Season 2023-24": "cf cost per save 2023-24",
+            "Regular Season 2022-23": "cf cost per save 2022-23",
+            "Regular Season 2021-22": "cf cost per save 2021-22",
+            "Regular Season 2020-21": "cf cost per save 2020-21",
+            "Regular Season 2019-20": "cf cost per save 2019-20",
+            "Regular Season 2018-19": "cf cost per save 2018-19",
+            "Regular Season 2017-18": "cf cost per save 2017-18",
+            "Regular Season 2016-17": "cf cost per save 2016-17"
+        }
+        # Get the table name based on the selected season
+        table_name = season_to_table_map.get(season)
+        if table_name:
+            try:
+                query = f"SELECT * FROM `{table_name}`"  # Query to get data from the corresponding table
+                df = pd.read_sql(query, conn)
+                df = df.reset_index(drop=True)  # Reset the index and drop the old index
+                st.dataframe(df)  # Display the DataFrame in Streamlit without the index
+            except pymysql.MySQLError as e:
+                st.error(f"Error executing query: {e}")
+            finally:
+                   conn.close()
 
 # Create section for Trades
 elif choose == "Trades":
