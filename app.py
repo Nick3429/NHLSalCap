@@ -9,17 +9,29 @@ import streamlit_analytics
 import base64
 from streamlit_extras.mention import mention
 from streamlit_extras.app_logo import add_logo
-#import sqlite3
-#from bs4 import BeautifulSoup
 from streamlit_extras.echo_expander import echo_expander
 import pandas as pd
 #from pandas import json_normalize
 import openpyxl
 import numpy as np
 from matplotlib import pyplot as plt
-#import pymysql
+import pymysql
 #AgGrid advanced streamlit table/dataframe formatter
 #from st_aggrid import AgGrid, GridOptionsBuilder
+
+#Fetching the secrets
+connection_info = st.secrets["connections"]["mysql"]
+
+# Establishing the connection
+conn = pymysql.connect(
+    host=connection_info["host"],
+    port=connection_info["port"],
+    user=connection_info["username"],
+    password=connection_info["password"],
+    database=connection_info["database"],
+    charset=connection_info["query"]["charset"]
+)
+
 
 
 # Set page title
@@ -300,6 +312,16 @@ elif choose == "Trades":
 # Create section for Retained Salary
 elif choose == "Retained Salary":
     st.header("Retained Salary")
+    if conn:
+        try:
+            query = "SELECT * FROM `capfriendly retainedsalary`"  # Replace 'yourtable' with your actual table name
+            df = pd.read_sql(query, conn)
+            #df= df.reset_index(drop=True)
+            st.dataframe(df)  # Display the DataFrame in Streamlit
+        except pymysql.MySQLError as e:
+            st.error(f"Error executing query: {e}")
+        finally:
+            conn.close()
     
 elif choose == "Teams":
     st.header("Teams")
