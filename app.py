@@ -310,8 +310,7 @@ elif choose == "Cost Per Point":
             try:
                 query = f"SELECT * FROM `{table_name}`"  # Query to get data from the corresponding table
                 df = pd.read_sql(query, conn)
-                df = df.reset_index(drop=True)  # Reset the index and drop the old index
-                st.dataframe(df)  # Display the DataFrame in Streamlit without the index
+                st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit without the index
             except pymysql.MySQLError as e:
                 st.error(f"Error executing query: {e}")
             finally:
@@ -320,7 +319,7 @@ elif choose == "Cost Per Point":
 # Create section for Cost Per Save
 elif choose == "Cost Per Save":
     st.markdown("<h1 style='text-align: center;'> Goalie Cost Per Save </h1>",unsafe_allow_html=True)
-    st.markdown("----",unsafe_allow_html=True)
+    #st.markdown("----",unsafe_allow_html=True)
     season_options = ["Regular Season 2023-24", "Regular Season 2022-23", "Regular Season 2021-22", "Regular Season 2020-21","Regular Season 2019-20", "Regular Season 2018-19", "Regular Season 2017-18", "Regular Season 2016-17"]
     with st.container():
         season=st.selectbox("Pick a season", options = season_options)
@@ -342,8 +341,7 @@ elif choose == "Cost Per Save":
             try:
                 query = f"SELECT * FROM `{table_name}`"  # Query to get data from the corresponding table
                 df = pd.read_sql(query, conn)
-                df = df.reset_index(drop=True)  # Reset the index and drop the old index
-                st.dataframe(df)  # Display the DataFrame in Streamlit without the index
+                st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit without the index
             except pymysql.MySQLError as e:
                 st.error(f"Error executing query: {e}")
             finally:
@@ -355,17 +353,21 @@ elif choose == "Trades":
 
 # Create section for Retained Salary
 elif choose == "Retained Salary":
-    st.header("Retained Salary")
-    if conn:
-        try:
-            query = "SELECT * FROM `capfriendly retainedsalary`"  # Replace 'yourtable' with your actual table name
-            df = pd.read_sql(query, conn)
-            #df= df.reset_index(drop=True)
-            st.dataframe(df)  # Display the DataFrame in Streamlit
-        except pymysql.MySQLError as e:
-            st.error(f"Error executing query: {e}")
-        finally:
-            conn.close()
+    with st.container():
+        st.markdown("<h1 style='text-align: center;'> Retained Salary </h1>",unsafe_allow_html=True)
+        #st.header("Retained Salary")
+        col1, col2, col3 = st.columns((1, 4, 1))
+        if conn:
+            try:
+                query = "SELECT * FROM `capfriendly retainedsalary`"  # Replace 'yourtable' with your actual table name
+                df = pd.read_sql(query, conn)
+                df= df.reset_index(drop=True)
+                with col2:
+                    st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+            except pymysql.MySQLError as e:
+                st.error(f"Error executing query: {e}")
+            finally:
+                conn.close()
     
 elif choose == "Teams":
     st.header("Teams")
@@ -381,7 +383,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-            #st.image(Hawks_logo)
                 st.write("*General Manager: Pat Verbeek*")
                 st.write("*Head Coach: Greg Cronin*")
         with st.container():
@@ -407,7 +408,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Craig Conroy*")
                 st.write("*Head Coach: Ryan Huska*")
         with st.container():
@@ -422,8 +422,7 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
-                st.write("*General Manager: Ken Holland*")
+                st.write("*General Manager: None*")
                 st.write("*Head Coach: Kris Knoblauch*")
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
@@ -437,7 +436,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Rob Blake*")
                 st.write("*Head Coach: Jim Hiller*")
         with st.container():
@@ -452,7 +450,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Mike Grier*")
                 st.write("*Head Coach: Ryan Warsofsky*")
         with st.container():
@@ -467,7 +464,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Ron Francis*")
                 st.write("*Head Coach: Dan Bylsma*")
         with st.container():
@@ -482,7 +478,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Patrik Allvin*")
                 st.write("*Head Coach: Rick Tocchet*")
         with st.container():
@@ -497,7 +492,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Kelly McCrimmon*")
                 st.write("*Head Coach: Bruce Cassidy*")
         with st.container():
@@ -512,7 +506,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Kyle Davidson*")
                 st.write("*Head Coach: Luke Richardson*")
         with st.container():
@@ -527,7 +520,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Chris MacFarland*")
                 st.write("*Head Coach: Jared Bednar*")
         with st.container():
@@ -542,7 +534,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Jim Nill*")
                 st.write("*Head Coach: Pete DeBoer*")
         with st.container():
@@ -557,7 +548,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Bill Guerin*")
                 st.write("*Head Coach: John Hynes*")
         with st.container():
@@ -572,7 +562,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Barry Trotz*")
                 st.write("*Head Coach: Andrew Brunette*")
         with st.container():
@@ -587,7 +576,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Doug Armstrong*")
                 st.write("*Head Coach: Drew Bannister*")
         with st.container():
@@ -602,7 +590,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Bill Armstrong*")
                 st.write("*Head Coach: Andre Tourigny*")
         with st.container():
@@ -617,7 +604,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Kevin Cheveldayoff*")
                 st.write("*Head Coach: Scott Arniel*")
         with st.container():
@@ -632,7 +618,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Eric Tulsky*")
                 st.write("*Head Coach: Rod Brind'Amour*")
         with st.container():
@@ -647,7 +632,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Don Waddell*")
                 st.write("*Head Coach: *")
         with st.container():
@@ -662,7 +646,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Tom Fitzgerald*")
                 st.write("*Head Coach: Sheldon Keefe*")
         with st.container():
@@ -677,7 +660,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Lou Lamoriello*")
                 st.write("*Head Coach: Patrik Roy*")
         with st.container():
@@ -692,7 +674,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Chris Drury*")
                 st.write("*Head Coach: Peter Laviolette*")
         with st.container():
@@ -707,7 +688,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Daniel Briere*")
                 st.write("*Head Coach: John Tortorella*")
         with st.container():
@@ -722,7 +702,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Kyle Dubas*")
                 st.write("*Head Coach: Mike Sullivan*")
         with st.container():
@@ -737,7 +716,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Brian MacLellan*")
                 st.write("*Head Coach: Spencer Carbery*")
         with st.container():
@@ -752,7 +730,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Don Sweeney*")
                 st.write("*Head Coach: Jim Montgomery*")
         with st.container():
@@ -767,7 +744,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Kevyn Adams*")
                 st.write("*Head Coach: Lindy Ruff*")
         with st.container():
@@ -782,7 +758,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Steve Yzerman*")
                 st.write("*Head Coach: Derek Lalonde*") 
         with st.container():
@@ -797,7 +772,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Bill Zito*")
                 st.write("*Head Coach: Paul Maurice*")
         with st.container():
@@ -812,7 +786,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Kent Hughes*")
                 st.write("*Head Coach: Martin St. Louis*")
         with st.container():
@@ -827,7 +800,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Steve Staios*")
                 st.write("*Head Coach: Travis Green*")
         with st.container():
@@ -842,7 +814,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Julien BriseBois*")
                 st.write("*Head Coach: Jon Cooper*")
         with st.container():
@@ -857,7 +828,6 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((1.25,1.35,0.4))
             with main_col:
-                #st.image(Hawks_logo)
                 st.write("*General Manager: Brad Treliving*")
                 st.write("*Head Coach: Craig Berube*")
         with st.container():
