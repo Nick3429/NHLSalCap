@@ -283,7 +283,42 @@ if choose == "Home Page":
             st.image(img_utown)
 elif choose == "Active Players":   
     #overview.createPage()
-    st.header("Active Players")
+    figure=plt.figure()
+    st.markdown("<h1 style='text-align: center;'> Active Players </h1>",unsafe_allow_html=True)
+    season_options = ["Regular Season 2030-31","Regular Season 2029-30","Regular Season 2028-29","Regular Season 2027-28","Regular Season 2026-27","Regular Season 2025-26","Regular Season 2024-25","Regular Season 2023-24", "Regular Season 2022-23", "Regular Season 2021-22", "Regular Season 2020-21","Regular Season 2019-20", "Regular Season 2018-19", "Regular Season 2017-18", "Regular Season 2016-17"]
+    with st.container():
+        season=st.selectbox("Pick a season", options = season_options)
+
+        #Map season option to corresponding table name
+        season_to_table_map={
+            "Regular Season 2030-31": "cf 2030-31 active players data",
+            "Regular Season 2029-30": "cf 2029-30 active players data",
+            "Regular Season 2028-29": "cf 2028-29 active players data",
+            "Regular Season 2027-28": "cf 2027-28 active players data",
+            "Regular Season 2026-27": "cf 2026-27 active players data",
+            "Regular Season 2025-26": "cf 2025-26 active players data",
+            "Regular Season 2024-25": "cf 2024-25 active players data",
+            "Regular Season 2023-24": "cf 2023-24 active players data",
+            "Regular Season 2022-23": "cf 2022-23 active players data",
+            "Regular Season 2021-22": "cf 2021-22 active players data",
+            "Regular Season 2020-21": "cf 2020-21 active players data",
+            "Regular Season 2019-20": "cf 2019-20 active players data",
+            "Regular Season 2018-19": "cf 2018-19 active players data",
+            "Regular Season 2017-18": "cf 2017-18 active players data",
+            "Regular Season 2016-17": "cf 2016-17 active players data"
+        }
+        # Get the table name based on the selected season
+        table_name = season_to_table_map.get(season)
+        if table_name:
+            try:
+                query = f"SELECT * FROM `{table_name}`"  # Query to get data from the corresponding table
+                df = pd.read_sql(query, conn)
+                st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit without the index
+            except pymysql.MySQLError as e:
+                st.error(f"Error executing query: {e}")
+            finally:
+                   conn.close()
+
 
 # Create section for Cost Per Point
 elif choose == "Cost Per Point":
