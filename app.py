@@ -16,6 +16,7 @@ import openpyxl
 import numpy as np
 from matplotlib import pyplot as plt
 import pymysql
+#import plotly_express as px
 #AgGrid advanced streamlit table/dataframe formatter
 #from st_aggrid import AgGrid, GridOptionsBuilder
 
@@ -97,6 +98,9 @@ footer:after{
 # Assets for Home Page
 img_utown = Image.open("images/BluesHomePageLogo.png")
 img_lh = Image.open("images/RetroLogo.png")
+#Stanley Cups
+SC1=Image.open("images/StanleyCup1.png")
+SC2=Image.open("images/StanleyCup2.png")
 #Team Page Logos
 #Atlantic Division
 Bruins_logo=Image.open("images/boston_bruins.png")
@@ -137,14 +141,14 @@ VGK_logo=Image.open("images/vegas_golden_knights.png")
 #Dataframes for team pages
 #Pacific Division
 #Anaheim Ducks
-ducks_forwards=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Forwards.csv")
-ducks_defense=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Defense.csv")
-ducks_goalies=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Goalies.csv")
-ducks_ir = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks IR.csv")
-ducks_DCB = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Dead Cap Buyout.csv")
-ducks_NRF = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Forwards.csv")
-ducks_NRD = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Defense.csv")
-ducks_NRG = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Goalies.csv")
+# ducks_forwards=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Forwards.csv")
+# ducks_defense=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Defense.csv")
+# ducks_goalies=pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Goalies.csv")
+# ducks_ir = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks IR.csv")
+# ducks_DCB = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Dead Cap Buyout.csv")
+# ducks_NRF = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Forwards.csv")
+# ducks_NRD = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Defense.csv")
+# ducks_NRG = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Goalies.csv")
 
 #AgGrid advanced table
 #Create GridOptionsBuilder from dataframe and enable autoSizeColumns and resizable
@@ -413,6 +417,8 @@ elif choose == "Teams":
     if selected == "Anaheim Ducks":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
+            #with blank_col1:
+                #st.image(SC1)
             with main_col:
                 st.image(Ducks_logo)
         with st.container():
@@ -427,14 +433,86 @@ elif choose == "Teams":
         with st.container():
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
-                st.dataframe(ducks_forwards, hide_index=True)
-                st.dataframe(ducks_defense, hide_index=True)
-                st.dataframe(ducks_goalies, hide_index=True)
-                st.dataframe(ducks_ir, hide_index=True)
-                st.dataframe(ducks_DCB, hide_index=True)
-                st.dataframe(ducks_NRF, hide_index=True)
-                st.dataframe(ducks_NRD, hide_index=True)
-                st.dataframe(ducks_NRG, hide_index=True)
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly ducks forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly ducks defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly ducks goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly ducks ir`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly ducks dead cap buyout`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly ducks non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly ducks non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly ducks non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "Calgary Flames":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
