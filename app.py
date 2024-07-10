@@ -14,7 +14,7 @@ import pandas as pd
 #from pandas import json_normalize
 import openpyxl
 #import numpy as np
-#from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
 import pymysql
 from zlib_ng import zlib_ng
 from zlib_ng import gzip_ng
