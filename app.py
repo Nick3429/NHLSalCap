@@ -1176,6 +1176,99 @@ elif choose == "Teams":
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
                 st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks ir`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks deadcap buyout`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks deadcap retained`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blackhawks non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "Colorado Avalanche":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
@@ -1190,6 +1283,89 @@ elif choose == "Teams":
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
                 st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly avs forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly avs defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly avs goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly avs ir`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly avs player assistance program`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly avs non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly avs non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly avs non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "Dallas Stars":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
@@ -1204,6 +1380,79 @@ elif choose == "Teams":
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
                 st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly stars forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly stars defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly stars goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly stars dead cap buyout`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly stars non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly stars non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly stars non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "Minnesota Wild":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
@@ -1218,6 +1467,89 @@ elif choose == "Teams":
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
                 st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly wild forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly wild defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly wild goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly wild ir`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly wild dead cap buyout`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly wild non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly wild non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly wild non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "Nashville Predators":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
@@ -1232,6 +1564,89 @@ elif choose == "Teams":
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
                 st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly preds forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly preds defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly preds goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly preds deadcapbuyout`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly preds deadcapretained`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly preds non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly preds non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly preds non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "St. Louis Blues":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
@@ -1246,6 +1661,69 @@ elif choose == "Teams":
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
                 st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blues forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blues defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blues goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blues non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blues non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly blues non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "Utah Hockey Club":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
@@ -1260,6 +1738,99 @@ elif choose == "Teams":
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
                 st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah ltir`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah dead cap buyout`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah dead cap retained`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly utah non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "Winnipeg Jets":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
@@ -1274,6 +1845,79 @@ elif choose == "Teams":
             blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
             with main_col:
                 st.divider()
+        with st.container():
+            blank_col1, main_col, blankcol3= st.columns((0.5,2,0.5))
+            with main_col:
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly jets forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly jets defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly jets goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly jets deadcap buyout`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly jets non-roster forwards`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly jets non-roster defense`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
+                 if conn:
+                           try:
+                               query = "SELECT * FROM `cap friendly jets non-roster goalies`"  # Replace 'yourtable' with your actual table name
+                               df = pd.read_sql(query, conn)
+                               df= df.reset_index(drop=True)
+                               st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit
+                           except pymysql.MySQLError as e:
+                               st.error(f"Error executing query: {e}")
+                        #    finally:
+                        #        conn.close()
     if selected == "Carolina Hurricanes":
         with st.container():
             blank_col1, main_col= st.columns((0.45,0.55))
