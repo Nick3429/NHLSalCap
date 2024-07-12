@@ -16,12 +16,15 @@ import openpyxl
 import numpy as np
 from matplotlib import pyplot as plt
 import pymysql
+#from sqlalchemy import create_engine
+#import pyodbc
 # from zlib_ng import zlib_ng
 # from zlib_ng import gzip_ng
 # from zlib_ng import gzip_ng_threaded
 #import plotly_express as px
 #AgGrid advanced streamlit table/dataframe formatter
 #from st_aggrid import AgGrid, GridOptionsBuilder
+
 
 #Fetching the secrets
 connection_info = st.secrets["connections"]["mysql"]
@@ -319,12 +322,17 @@ elif choose == "Active Players":
         if table_name:
             try:
                 query = f"SELECT * FROM `{table_name}`"  # Query to get data from the corresponding table
+                #engine=get_connection()
+                #df = pd.read_sql(query, con=engine)
                 df = pd.read_sql(query, conn)
                 st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit without the index
             except pymysql.MySQLError as e:
                 st.error(f"Error executing query: {e}")
             finally:
                    conn.close()
+                   #connection.close()
+                #    if 'engine' in locals():
+                #        engine.dispose()  # Properly close the SQLAlchemy engine
 
 
 # Create section for Cost Per Point
@@ -351,12 +359,14 @@ elif choose == "Cost Per Point":
         if table_name:
             try:
                 query = f"SELECT * FROM `{table_name}`"  # Query to get data from the corresponding table
+                #df = pd.read_sql(query, get_connection())
                 df = pd.read_sql(query, conn)
                 st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit without the index
             except pymysql.MySQLError as e:
                 st.error(f"Error executing query: {e}")
             finally:
                    conn.close()
+                   #get_connection.close()
 
 # Create section for Cost Per Save
 elif choose == "Cost Per Save":
@@ -382,12 +392,14 @@ elif choose == "Cost Per Save":
         if table_name:
             try:
                 query = f"SELECT * FROM `{table_name}`"  # Query to get data from the corresponding table
+                #df = pd.read_sql(query, get_connection())
                 df = pd.read_sql(query, conn)
                 st.dataframe(df, hide_index=True)  # Display the DataFrame in Streamlit without the index
             except pymysql.MySQLError as e:
                 st.error(f"Error executing query: {e}")
             finally:
                    conn.close()
+                   #get_connection.close()
 
 # Create section for Trades
 elif choose == "Trades":
@@ -399,9 +411,11 @@ elif choose == "Retained Salary":
         st.markdown("<h1 style='text-align: center;'> Retained Salary </h1>",unsafe_allow_html=True)
         #st.header("Retained Salary")
         col1, col2, col3 = st.columns((1, 4, 1))
+        #if get_connection():
         if conn:
             try:
                 query = "SELECT * FROM `capfriendly retainedsalary`"  # Replace 'yourtable' with your actual table name
+                #df = pd.read_sql(query, get_connection())
                 df = pd.read_sql(query, conn)
                 df= df.reset_index(drop=True)
                 with col2:
@@ -410,6 +424,7 @@ elif choose == "Retained Salary":
                 st.error(f"Error executing query: {e}")
             finally:
                 conn.close()
+                #get_connection().close()
     
 elif choose == "Teams":
     st.header("Teams")
