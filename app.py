@@ -16,6 +16,9 @@ import openpyxl
 import numpy as np
 from matplotlib import pyplot as plt
 import pymysql
+import sqlalchemy
+#import mysqlclient
+#import mysql.connector
 #from sqlalchemy import create_engine
 #import pyodbc
 # from zlib_ng import zlib_ng
@@ -25,11 +28,15 @@ import pymysql
 #AgGrid advanced streamlit table/dataframe formatter
 #from st_aggrid import AgGrid, GridOptionsBuilder
 
+# Set page title
+st.set_page_config(page_title="Blues", page_icon = "ice_hockey_stick_and_puck", layout = "wide", initial_sidebar_state = "auto")
+
 
 #Fetching the secrets
 connection_info = st.secrets["connections"]["mysql"]
 
 # Establishing the connection
+conn= st.connection('mysql', type='sql')
 conn = pymysql.connect(
     host=connection_info["host"],
     port=connection_info["port"],
@@ -41,8 +48,7 @@ conn = pymysql.connect(
 
 
 
-# Set page title
-st.set_page_config(page_title="Blues", page_icon = "ice_hockey_stick_and_puck", layout = "wide", initial_sidebar_state = "auto")
+
 
 # Use the following line to include your style.css file
 st.markdown('<style>' + open('style.css').read() + '</style>', unsafe_allow_html=True)
@@ -155,6 +161,14 @@ VGK_logo=Image.open("images/vegas_golden_knights.png")
 # ducks_NRF = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Forwards.csv")
 # ducks_NRD = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Defense.csv")
 # ducks_NRG = pd.read_csv("Anaheim Ducks/Cap Friendly Ducks Non-Roster Goalies.csv")
+#Calgary Flames
+# Flames_forwards=pd.read_csv("Calgary Flames/Cap Friendly Flames Forwards.csv")
+# Flames_defense=pd.read_csv("Calgary Flames/Cap Friendly Flames Defense.csv")
+# Flames_goalies=pd.read_csv("Calgary Flames/Cap Friendly Flames Goalies.csv")
+# Flames_DCB = pd.read_csv("Calgary Flames/Cap Friendly Flames Dead Cap Retained.csv")
+# Flames_NRF = pd.read_csv("Calgary Flames/Cap Friendly Flames Non-Roster Forwards.csv")
+# Flames_NRD = pd.read_csv("Calgary Flames/Cap Friendly Flames Non-Roster Defense.csv")
+# Flames_NRG = pd.read_csv("Calgary Flames/Cap Friendly Flames Non-Roster Goalies.csv")
 
 #AgGrid advanced table
 #Create GridOptionsBuilder from dataframe and enable autoSizeColumns and resizable
