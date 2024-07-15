@@ -10,3 +10,4 @@ streamlit-analytics
 streamlit-extras
 beautifulsoup4
 pymysql
+sqlalchemy

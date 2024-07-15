@@ -16,7 +16,7 @@ import openpyxl
 import numpy as np
 from matplotlib import pyplot as plt
 import pymysql
-#import sqlalchemy
+import sqlalchemy
 #import mysqlclient
 #import mysql.connector
 #from sqlalchemy import create_engine
