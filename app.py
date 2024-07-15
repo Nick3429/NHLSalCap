@@ -18,7 +18,7 @@ from matplotlib import pyplot as plt
 import pymysql
 import sqlalchemy
 import MySQLdb
-#import mysqlclient
+import mysqlclient
 #import mysql.connector
 #from sqlalchemy import create_engine
 #import pyodbc
