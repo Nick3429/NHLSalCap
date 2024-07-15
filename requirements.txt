@@ -11,3 +11,4 @@ streamlit-extras
 beautifulsoup4
 pymysql
 sqlalchemy
+MySQLdb
